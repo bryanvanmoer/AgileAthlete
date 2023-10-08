@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('posts');
+    return view('players');
 });
 
-Route::get('/post', function () {
-    return view('post');
+Route::get('/player', function () {
+    return view('player');
 });
+
