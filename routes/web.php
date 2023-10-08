@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('players');
+    return view('home');
 });
 
 Route::get('/player', function () {
