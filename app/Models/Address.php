@@ -16,4 +16,8 @@ class Address extends Model
         'street',
         'number'
     ];
+
+    protected $guarded = [
+        'address_id'
+    ];
 }

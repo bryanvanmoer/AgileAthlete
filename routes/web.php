@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Address;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('addresses', [
+        'addresses' => Address::all()
+    ]);
 });
 
-Route::get('/player', function () {
-    return view('player');
+Route::get('addresses/{address}', function (Address $adress) {
+    return view('address', [
+        'address' => $adress
+    ]);
 });
 
