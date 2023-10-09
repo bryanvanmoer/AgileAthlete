@@ -21,9 +21,9 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('addresses/{address}', function (Address $adress) {
+Route::get('addresses/{address}', function (Address $address) {
     return view('address', [
-        'address' => $adress
+        'address' => $address
     ]);
 });
 

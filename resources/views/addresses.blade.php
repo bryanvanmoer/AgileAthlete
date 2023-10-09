@@ -2,8 +2,8 @@
     @foreach($addresses as $address)
         <article>
             <h1>
-                <a href="/addresses/{{ $address }}">
-                    {{ $address->country }}
+                <a href="/addresses/{{ $address->id }}">
+                    {{ $address->country }} [{{$address->id}}]
                 </a>
             </h1>
             <div>
