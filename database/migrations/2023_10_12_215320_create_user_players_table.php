@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id('user_player_id');
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('email');
-            $table->string('password');
             $table->timestamp('birth_date')->nullable();
             $table->string('size')->nullable();
             $table->string('weight')->nullable();
+            $table->string('description')->nullable();
             $table->string('nationality')->nullable();
-            $table->string('good_hand')->nullable();
+            $table->enum('good_hand', ['right', 'left'])->nullable();
+            $table->string('location');
             $table->timestamps();
         });
     }
