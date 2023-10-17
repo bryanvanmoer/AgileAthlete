@@ -1,41 +1,34 @@
-<!DOCTYPE html>
+<x-layout>
+    @include('_home-header');
 
-<title>My Blog</title>
 
-<link rel="stylesheet" href="/app.css">
+    <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
 
-<body>
-<article>
-    <h1><a href="/player">Player One</a></h1>
-    <p>
-        Mariti utilia deberet haec lenitate exitium erga regina in obstinatum rettulimus actibus cum et actibus
-        Gordianorum in similia multa potius feminea utilia potius reducere coniugem exitium admovente in Gordianorum
-        rettulimus. Mariti utilia deberet haec lenitate exitium erga regina in obstinatum rettulimus actibus cum et actibus
-        Gordianorum in similia multa potius feminea utilia potius reducere coniugem exitium admovente in Gordianorum
-        rettulimus.
-    </p>
-</article>
+        <x-player-featured-card :player="$players[0]"/>
 
-<article>
-    <h1><a href="/player">Player Two</a></h1>
-    <p>
-        Mariti utilia deberet haec lenitate exitium erga regina in obstinatum rettulimus actibus cum et actibus
-        Gordianorum in similia multa potius feminea utilia potius reducere coniugem exitium admovente in Gordianorum
-        rettulimus. Mariti utilia deberet haec lenitate exitium erga regina in obstinatum rettulimus actibus cum et actibus
-        Gordianorum in similia multa potius feminea utilia potius reducere coniugem exitium admovente in Gordianorum
-        rettulimus.
-    </p>
-</article>
+        {{--    <div class="lg:grid lg:grid-cols-2">
+                    <x-address-card/>
+                    <x-address-card/>
+                </div>
 
-<article>
-    <h1><a href="/player">Player Three</a></h1>
-    <p>
-        Mariti utilia deberet haec lenitate exitium erga regina in obstinatum rettulimus actibus cum et actibus
-        Gordianorum in similia multa potius feminea utilia potius reducere coniugem exitium admovente in Gordianorum
-        rettulimus. Mariti utilia deberet haec lenitate exitium erga regina in obstinatum rettulimus actibus cum et actibus
-        Gordianorum in similia multa potius feminea utilia potius reducere coniugem exitium admovente in Gordianorum
-        rettulimus.
-    </p>
-</article>
+                <div class="lg:grid lg:grid-cols-3">
+                    <x-address-card/>
+                    <x-address-card/>
+                    <x-address-card/>
+                </div>--}}
+    </main>
 
-</body>
+    {{--    @foreach($addresses as $address)
+        <article>
+            <h1>
+                <a href="/addresses/{{ $address->id }}">
+                    {{ $address->country }} [{{$address->id}}]
+                </a>
+            </h1>
+            <div>
+                {{ $address->street }}, {{$address->number}} <br>
+                {{ $address->city }}, {{$address->postal_code}}
+            </div>
+        </article>
+    @endforeach--}}
+</x-layout>
