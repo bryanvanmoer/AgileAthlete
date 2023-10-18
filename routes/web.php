@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use App\Models\UserPlayer;
 use Illuminate\Support\Facades\Route;
 
@@ -16,14 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('players', [
-        'players' => UserPlayer::all()
+    return view('users', [
+        'users' => User::all()
     ]);
 });
 
-Route::get('players/{player}', function (UserPlayer $player) {
-    return view('player', [
-        'player' => $player
+Route::get('users/{user}', function (User $user) {
+    return view('user', [
+        'user' => $user
     ]);
 });
 

@@ -4,31 +4,20 @@
 
     <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
 
-        <x-player-featured-card :player="$players[0]"/>
+        @if($posts->count())
+            <x-player-featured-card :player="$players[0]"/>
 
-        {{--    <div class="lg:grid lg:grid-cols-2">
-                    <x-address-card/>
-                    <x-address-card/>
-                </div>
-
+            @if($posts->count() > 1)
                 <div class="lg:grid lg:grid-cols-3">
-                    <x-address-card/>
-                    <x-address-card/>
-                    <x-address-card/>
-                </div>--}}
-    </main>
+                    @foreach($players->skip(1) as $user)
+                        <x-user-card :post="$post"/>
+                    @endforeach
+                </div>
+            @endif
 
-    {{--    @foreach($addresses as $address)
-        <article>
-            <h1>
-                <a href="/addresses/{{ $address->id }}">
-                    {{ $address->country }} [{{$address->id}}]
-                </a>
-            </h1>
-            <div>
-                {{ $address->street }}, {{$address->number}} <br>
-                {{ $address->city }}, {{$address->postal_code}}
-            </div>
-        </article>
-    @endforeach--}}
+        @else
+            <p class="text-center">No users yet. Please check back later.</p>
+        @endif
+
+    </main>
 </x-layout>
