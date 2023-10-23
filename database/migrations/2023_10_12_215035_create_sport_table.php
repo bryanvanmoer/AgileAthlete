@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sports', function (Blueprint $table) {
-            $table->unsignedInteger('sport_id')->autoIncrement();
+            $table->uuid('sport_id')->primary();
             $table->string('name');
             $table->timestamps();
         });
