@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('street')->nullable();
             $table->string('street_number')->nullable();
             $table->uuid('user_id');
-            $table->uuid(' ');
+            $table->uuid('sport_id');
             $table->timestamps();
 
             $table->foreign('user_id')->references('user_id')->on('users');

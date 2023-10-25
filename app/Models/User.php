@@ -16,19 +16,9 @@ class User extends Authenticatable
     protected $fillable = [
         'email',
         'password',
-        'firstname',
-        'lastname',
-        'birthdate',
-        'size',
-        'weight',
-        'description',
-        'nationality',
-        'good_hand',
-        'location',
-        'phone',
         'password_changed_at',
-        'gender',
         'admin',
+        'role',
     ];
 
     protected $hidden = [
@@ -37,8 +27,8 @@ class User extends Authenticatable
     ];
 
     protected $casts = [
-        'birthdate' => 'timestamp',
         'password_changed_at' => 'timestamp',
         'password' => 'hashed',
     ];
 }
+

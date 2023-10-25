@@ -1,5 +1,6 @@
 <?php
 
+use App\Enum\Gender;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -23,7 +24,7 @@ return new class extends Migration
             $table->enum('good_hand', ['right', 'left'])->nullable();
             $table->string('location')->nullable();
             $table->string('phone')->nullable();
-            $table->enum('gender', ['man','woman','other'])->nullable();
+            $table->enum('gender', Gender::values())->nullable();
             $table->uuid('user_id');
             $table->timestamps();
 
