@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamp('password_changed_at')->nullable();
-            $table->enum('role',['club','player']);
             $table->boolean('admin');
             $table->rememberToken();
             $table->timestamps();
